@@ -7,7 +7,7 @@
 <body>
 <?php if(isset($message)) echo "Sua thanh cong tin tuc"; ?>
 <table align="center" border="0.5" bgcolor="white" width="600px" height="600px">
-<a href="http://localhost:8888/oopmvc/index.php">Trang Chủ</a>
+<a href="index.php">Trang Chủ</a>
 <form action="" method="post">
 	<tr align="center">
 		<td colspan="2">Sửa Tin Tức</td>
@@ -36,4 +36,4 @@
 </table>
 </body>
 </html>
-<a href="http://localhost:8888/oopmvc/index.php?controller=tintuc&function=allca">Trang Category Name</a>
+<a href="index.php?controller=tintuc&function=allca">Trang Category Name</a>

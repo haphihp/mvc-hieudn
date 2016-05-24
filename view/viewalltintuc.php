@@ -30,3 +30,4 @@
 <a href="index.php?controller=tintuc&function=addtintuc">Thêm tin tức</a>
 <a href="index.php?controller=tintuc&function=addca">Thêm Category</a>
 <a href="index.php?controller=tintuc&function=allca">Category</a>
+<a href="index.php?controller=user&function=logout">Đăng Xuất</a>

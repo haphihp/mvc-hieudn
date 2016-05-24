@@ -9,10 +9,8 @@ class tintuc
 		$select = new tintucmodel;
 		$data = $select->alltintuc();
 		require_once PATH.'/view/viewalltintuc.php';
-
-		echo "<a href=\"index.php?controller=logout\">Đăng Xuất</a>";
-
 	}
+	
 	function edittintuc()
 	{
 		require_once PATH.'/model/tintucmodel.php';
@@ -38,7 +36,7 @@ class tintuc
 		$id = $_GET['id'];
 		$result = new tintucmodel;
 		$result->deletetintuc($id);
-		header('location:http://localhost:8888/oopmvc/index.php');
+		header('location: index.php');
 	}
 	function addtintuc()
 	{
@@ -52,7 +50,7 @@ class tintuc
 			$result ->addtintuc($caid,$title,$content);
 			if(isset($result))
 			{
-				$message = "thêm thành công<a href='http://localhost:8888/oopmvc/index.php'>Trang Chủ</a>";
+				$message = "thêm thành công<a href='index.php'>Trang Chủ</a>";
 			}
 			else
 			{
@@ -72,11 +70,11 @@ class tintuc
 			$result->addca($category);
 			if(isset($result))
 			{
-				$message = "thêm thành công<a href='http://localhost:8888/oopmvc/index.php'>Trang Chủ</a>";
+				$message = "thêm thành công<a href='index.php'>Trang Chủ</a>";
 			}
 			else
 			{
-				$message="thêm thất bại !";
+				$message="thêm thất bại! ";
 			}
 		}
 		require_once PATH.'/view/viewaddca.php';
@@ -101,4 +99,5 @@ class tintuc
 		$data = $result->viewca($id);
 		require_once PATH.'/view/vieweditca.php';
 	}
+	
 }

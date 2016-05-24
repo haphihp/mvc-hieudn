@@ -1,6 +1,5 @@
 <?php 
-require_once PATH.'/model/connect.php';
-class signupmodel extends model
+class usermodel extends model
 {
 	function getsignup($username,$password,$email)
 	{
@@ -27,5 +26,13 @@ class signupmodel extends model
 			}
 		}
 	}
+	function getlogin($username,$password)
+	{
+		$select = "SELECT * FROM signup WHERE username='$username'";
+		$query = mysqli_query($this->connect,$select);
+		return mysqli_fetch_assoc($query);
+	}
 }
+
+
  ?>
