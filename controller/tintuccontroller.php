@@ -8,6 +8,26 @@ class tintuc
 		require_once PATH.'/model/tintucmodel.php';
 		$select = new tintucmodel;
 		$data = $select->alltintuc();
+		$countContents = count($data);
+		$pageNumbers = ceil(($countContents/10)); 
+		
+		if (isset($_GET['page']))
+		{
+			$page = $_GET['page'];
+		}
+		if (!isset($page) || $page < 0 || $page > $pageNumbers)
+		{
+			$page = 1;
+		}
+		if ($page == 1)
+		{
+			$limitStart = 0;
+		}
+		else
+		{
+			$limitStart = $page*10-10;
+		}
+		$data = $select->getContentOnPage($limitStart);
 		require_once PATH.'/view/viewalltintuc.php';
 	}
 	

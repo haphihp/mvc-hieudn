@@ -8,6 +8,13 @@ class tintucmodel extends model
 	$query = mysqli_query($this->connect,$sql);
 	return mysqli_fetch_all($query,MYSQLI_ASSOC);
 	}
+	
+	function getContentOnPage($limitStart)
+	{
+	$sql = "SELECT * FROM catergory as c JOIN news as n ON c.id=n.caid ORDER BY n.id DESC LIMIT $limitStart, 10";
+	$query = mysqli_query($this->connect,$sql);
+	return mysqli_fetch_all($query,MYSQLI_ASSOC);	
+	
 	function addtintuc($caid,$title,$content)
 	{
 		$sql = "INSERT INTO news(caid,title,content) VALUES ('$caid','$title','$content')";
